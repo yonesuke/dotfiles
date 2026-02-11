@@ -1,0 +1,40 @@
+{
+    "buckets": [
+        {
+            "Name": "main"
+        },
+        {
+            "Name": "extras"
+        }
+    ],
+    "apps": [
+        {
+            "Name": "7zip",
+            "Source": "main"
+        },
+        {
+            "Name": "fd",
+            "Source": "main"
+        },
+        {
+            "Name": "gcc",
+            "Source": "main"
+        },
+        {
+            "Name": "gh",
+            "Source": "main"
+        },
+        {
+            "Name": "lazygit",
+            "Source": "extras"
+        },
+        {
+            "Name": "ripgrep",
+            "Source": "main"
+        },
+        {
+            "Name": "tree-sitter",
+            "Source": "main"
+        }
+    ]
+}

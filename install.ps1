@@ -32,4 +32,11 @@ foreach ($src in $links.Keys) {
     Write-Host "[ok]   $dest -> $src" -ForegroundColor Green
 }
 
+# Install scoop packages from scoopfile.json
+$scoopfile = Join-Path $DotfilesDir "scoopfile.json"
+if (Test-Path $scoopfile) {
+    Write-Host "`nInstalling Scoop packages..." -ForegroundColor Cyan
+    scoop import $scoopfile
+}
+
 Write-Host "`nDone!" -ForegroundColor Cyan
