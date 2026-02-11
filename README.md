@@ -7,6 +7,7 @@
 ```
 dotfiles/
 ├── nvim/            # Neovim (LazyVim)
+├── scoopfile.json   # Scoop パッケージ一覧
 ├── install.ps1      # Windows 用インストールスクリプト
 ├── install.sh       # Linux / macOS 用インストールスクリプト
 └── README.md
@@ -40,7 +41,8 @@ powershell -ExecutionPolicy Bypass -File ~/dotfiles/install.ps1
 
 - [ ] シェル設定 (`.bashrc` / `.zshrc` / PowerShell `$PROFILE`)
 - [ ] ターミナル設定 (Windows Terminal / Alacritty 等)
-- [ ] パッケージ管理 (Brewfile / scoop export)
+- [ ] パッケージ管理 (Brewfile)
+- [x] パッケージ管理 (scoop export)
 
 ## 設定の追加
 
