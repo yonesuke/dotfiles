@@ -36,6 +36,12 @@ cd ~/dotfiles && bash install.sh
 powershell -ExecutionPolicy Bypass -File ~/dotfiles/install.ps1
 ```
 
+## TODO
+
+- [ ] シェル設定 (`.bashrc` / `.zshrc` / PowerShell `$PROFILE`)
+- [ ] ターミナル設定 (Windows Terminal / Alacritty 等)
+- [ ] パッケージ管理 (Brewfile / scoop export)
+
 ## 設定の追加
 
 1. `dotfiles/` 以下に設定フォルダを追加
