@@ -7,6 +7,7 @@
 ```
 dotfiles/
 ├── nvim/            # Neovim (LazyVim)
+├── wezterm/         # WezTerm
 ├── scoopfile.json   # Scoop パッケージ一覧
 ├── install.ps1      # Windows 用インストールスクリプト
 ├── install.sh       # Linux / macOS 用インストールスクリプト
@@ -16,6 +17,7 @@ dotfiles/
 | アプリ | Windows | Linux / macOS |
 |--------|---------|---------------|
 | nvim   | `%LOCALAPPDATA%\nvim` | `~/.config/nvim` |
+| wezterm | `~/.config/wezterm` | `~/.config/wezterm` |
 
 ## セットアップ
 
@@ -40,7 +42,7 @@ powershell -ExecutionPolicy Bypass -File ~/dotfiles/install.ps1
 ## TODO
 
 - [ ] シェル設定 (`.bashrc` / `.zshrc` / PowerShell `$PROFILE`)
-- [ ] ターミナル設定 (Windows Terminal / Alacritty 等)
+- [x] ターミナル設定 (WezTerm)
 - [ ] パッケージ管理 (Brewfile)
 - [x] パッケージ管理 (scoop export)
 

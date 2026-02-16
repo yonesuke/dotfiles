@@ -8,6 +8,7 @@ $DotfilesDir = $PSScriptRoot
 $links = @{
     # source (dotfiles)          => target (system location)
     "$DotfilesDir\nvim"          = "$env:LOCALAPPDATA\nvim"
+    "$DotfilesDir\wezterm"       = "$HOME\.config\wezterm"
 }
 
 foreach ($src in $links.Keys) {

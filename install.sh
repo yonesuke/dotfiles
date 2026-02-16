@@ -7,6 +7,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 declare -A links
 # source (dotfiles)        => target (system location)
 links["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
+links["$DOTFILES_DIR/wezterm"]="$HOME/.config/wezterm"
 
 for src in "${!links[@]}"; do
     dest="${links[$src]}"
