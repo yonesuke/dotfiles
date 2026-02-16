@@ -1,40 +1,88 @@
 {
-    "buckets": [
-        {
-            "Name": "main"
-        },
-        {
-            "Name": "extras"
-        }
-    ],
     "apps": [
         {
-            "Name": "7zip",
-            "Source": "main"
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-10T19:08:54.4717044+09:00",
+            "Version": "25.01",
+            "Name": "7zip"
         },
         {
-            "Name": "fd",
-            "Source": "main"
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-16T13:09:33.6694986+09:00",
+            "Version": "2.936",
+            "Name": "cygwin"
         },
         {
-            "Name": "gcc",
-            "Source": "main"
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-10T20:50:58.7755486+09:00",
+            "Version": "10.3.0",
+            "Name": "fd"
         },
         {
-            "Name": "gh",
-            "Source": "main"
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-10T19:09:17.7290667+09:00",
+            "Version": "15.2.0",
+            "Name": "gcc"
         },
         {
-            "Name": "lazygit",
-            "Source": "extras"
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-11T23:02:39.0998336+09:00",
+            "Version": "2.86.0",
+            "Name": "gh"
         },
         {
-            "Name": "ripgrep",
-            "Source": "main"
+            "Info": "",
+            "Source": "extras",
+            "Updated": "2026-02-10T20:54:18.8034561+09:00",
+            "Version": "0.59.0",
+            "Name": "lazygit"
         },
         {
-            "Name": "tree-sitter",
-            "Source": "main"
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-10T21:21:53.2026502+09:00",
+            "Version": "15.1.0",
+            "Name": "ripgrep"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-13T00:37:52.5742241+09:00",
+            "Version": "1.24.2",
+            "Name": "starship"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-10T19:09:19.6157008+09:00",
+            "Version": "0.26.5",
+            "Name": "tree-sitter"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Updated": "2026-02-17T00:26:17.8232218+09:00",
+            "Version": "0.0.1",
+            "Name": "zenhan"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2026-02-16T21:33:06+09:00",
+            "Manifests": 1438
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-02-17T00:17:18+09:00",
+            "Manifests": 2264
         }
     ]
 }
