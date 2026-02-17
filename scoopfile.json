@@ -1,73 +1,87 @@
 {
     "apps": [
         {
-            "Info": "",
+            "Version": "25.01",
             "Source": "main",
             "Updated": "2026-02-10T19:08:54.4717044+09:00",
-            "Version": "25.01",
+            "Info": "",
             "Name": "7zip"
         },
         {
-            "Info": "",
+            "Version": "2.936",
             "Source": "main",
             "Updated": "2026-02-16T13:09:33.6694986+09:00",
-            "Version": "2.936",
+            "Info": "",
             "Name": "cygwin"
         },
         {
-            "Info": "",
+            "Version": "10.3.0",
             "Source": "main",
             "Updated": "2026-02-10T20:50:58.7755486+09:00",
-            "Version": "10.3.0",
+            "Info": "",
             "Name": "fd"
         },
         {
-            "Info": "",
+            "Version": "15.2.0",
             "Source": "main",
             "Updated": "2026-02-10T19:09:17.7290667+09:00",
-            "Version": "15.2.0",
+            "Info": "",
             "Name": "gcc"
         },
         {
-            "Info": "",
+            "Version": "2.86.0",
             "Source": "main",
             "Updated": "2026-02-11T23:02:39.0998336+09:00",
-            "Version": "2.86.0",
+            "Info": "",
             "Name": "gh"
         },
         {
-            "Info": "",
+            "Version": "0.59.0",
             "Source": "extras",
             "Updated": "2026-02-10T20:54:18.8034561+09:00",
-            "Version": "0.59.0",
+            "Info": "",
             "Name": "lazygit"
         },
         {
+            "Version": "2025-12-13",
+            "Source": "main",
+            "Updated": "2026-02-17T08:04:34.2182511+09:00",
             "Info": "",
+            "Name": "msys2"
+        },
+        {
+            "Version": "15.1.0",
             "Source": "main",
             "Updated": "2026-02-10T21:21:53.2026502+09:00",
-            "Version": "15.1.0",
+            "Info": "",
             "Name": "ripgrep"
         },
         {
-            "Info": "",
+            "Version": "1.24.2",
             "Source": "main",
             "Updated": "2026-02-13T00:37:52.5742241+09:00",
-            "Version": "1.24.2",
+            "Info": "",
             "Name": "starship"
         },
         {
-            "Info": "",
+            "Version": "0.26.5",
             "Source": "main",
             "Updated": "2026-02-10T19:09:19.6157008+09:00",
-            "Version": "0.26.5",
+            "Info": "",
             "Name": "tree-sitter"
         },
         {
+            "Version": "nightly-20260217",
+            "Source": "versions",
+            "Updated": "2026-02-17T21:29:26.9159666+09:00",
             "Info": "",
+            "Name": "wezterm-nightly"
+        },
+        {
+            "Version": "0.0.1",
             "Source": "main",
             "Updated": "2026-02-17T00:26:17.8232218+09:00",
-            "Version": "0.0.1",
+            "Info": "",
             "Name": "zenhan"
         }
     ],
@@ -75,14 +89,20 @@
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main.git",
-            "Updated": "2026-02-16T21:33:06+09:00",
+            "Updated": "2026-02-17T17:32:33+09:00",
             "Manifests": 1438
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
-            "Updated": "2026-02-17T00:17:18+09:00",
+            "Updated": "2026-02-17T17:32:54+09:00",
             "Manifests": 2264
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": "2026-02-17T18:08:20+09:00",
+            "Manifests": 550
         }
     ]
 }
