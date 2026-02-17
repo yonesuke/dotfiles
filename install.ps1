@@ -9,6 +9,7 @@ $links = @{
     # source (dotfiles)          => target (system location)
     "$DotfilesDir\nvim"          = "$env:LOCALAPPDATA\nvim"
     "$DotfilesDir\wezterm"       = "$HOME\.config\wezterm"
+    "$DotfilesDir\yazi"          = "$env:APPDATA\yazi\config"
 }
 
 foreach ($src in $links.Keys) {
@@ -38,6 +39,20 @@ $scoopfile = Join-Path $DotfilesDir "scoopfile.json"
 if (Test-Path $scoopfile) {
     Write-Host "`nInstalling Scoop packages..." -ForegroundColor Cyan
     scoop import $scoopfile
+}
+
+# Set YAZI_FILE_ONE environment variable (required for MIME type detection on Windows)
+$fileExe = "C:\Program Files\Git\usr\bin\file.exe"
+if (Test-Path $fileExe) {
+    $current = [Environment]::GetEnvironmentVariable("YAZI_FILE_ONE", "User")
+    if ($current -ne $fileExe) {
+        [Environment]::SetEnvironmentVariable("YAZI_FILE_ONE", $fileExe, "User")
+        Write-Host "[ok]   YAZI_FILE_ONE = $fileExe" -ForegroundColor Green
+    } else {
+        Write-Host "[skip] YAZI_FILE_ONE (already set)" -ForegroundColor Yellow
+    }
+} else {
+    Write-Host "[warn] file.exe not found at $fileExe — set YAZI_FILE_ONE manually" -ForegroundColor Red
 }
 
 Write-Host "`nDone!" -ForegroundColor Cyan

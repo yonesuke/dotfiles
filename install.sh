@@ -8,6 +8,7 @@ declare -A links
 # source (dotfiles)        => target (system location)
 links["$DOTFILES_DIR/nvim"]="$HOME/.config/nvim"
 links["$DOTFILES_DIR/wezterm"]="$HOME/.config/wezterm"
+links["$DOTFILES_DIR/yazi"]="$HOME/.config/yazi"
 
 for src in "${!links[@]}"; do
     dest="${links[$src]}"

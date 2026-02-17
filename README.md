@@ -8,6 +8,7 @@
 dotfiles/
 ├── nvim/            # Neovim (LazyVim)
 ├── wezterm/         # WezTerm
+├── yazi/            # yazi ファイルマネージャ
 ├── scoopfile.json   # Scoop パッケージ一覧
 ├── install.ps1      # Windows 用インストールスクリプト
 ├── install.sh       # Linux / macOS 用インストールスクリプト
@@ -18,6 +19,7 @@ dotfiles/
 |--------|---------|---------------|
 | nvim   | `%LOCALAPPDATA%\nvim` | `~/.config/nvim` |
 | wezterm | `~/.config/wezterm` | `~/.config/wezterm` |
+| yazi   | `%APPDATA%\yazi\config` | `~/.config/yazi` |
 
 ## セットアップ
 
@@ -38,6 +40,14 @@ cd ~/dotfiles && bash install.sh
 ```powershell
 powershell -ExecutionPolicy Bypass -File ~/dotfiles/install.ps1
 ```
+
+## 備考
+
+### yazi
+
+- scoop (`scoopfile.json`) でインストール
+- Windows では `YAZI_FILE_ONE` 環境変数が必要（MIME タイプ検出用）
+  - `install.ps1` が Git 同梱の `file.exe` を自動で設定する
 
 ## TODO
 
