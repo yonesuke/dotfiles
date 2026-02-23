@@ -64,15 +64,28 @@ config.use_ime = true
 config.window_decorations = "RESIZE"
 
 local act = wezterm.action
+
 config.keys = {
 	{ key = "t", mods = "CTRL", action = act.ShowLauncherArgs({ flags = "LAUNCH_MENU_ITEMS|TABS" }) },
 	{ key = "d", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "\\", mods = "CTRL|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "-", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{
 		key = "c",
 		mods = "CTRL|SHIFT",
 		action = act.ActivateKeyTable({ name = "claude_chord", one_shot = true, timeout_milliseconds = 1000 }),
 	},
 	{ key = "Copy", mods = "NONE", action = act.CopyTo("Clipboard") },
+	-- ペイン移動 (vim風)
+	{ key = "h", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
+	{ key = "l", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
+	-- ペインリサイズ (Ctrl+矢印)
+	{ key = "LeftArrow",  mods = "CTRL", action = act.AdjustPaneSize({ "Left",  1 }) },
+	{ key = "RightArrow", mods = "CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
+	{ key = "UpArrow",    mods = "CTRL", action = act.AdjustPaneSize({ "Up",    1 }) },
+	{ key = "DownArrow",  mods = "CTRL", action = act.AdjustPaneSize({ "Down",  1 }) },
 }
 
 config.key_tables = {
