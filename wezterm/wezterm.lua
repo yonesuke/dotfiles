@@ -65,6 +65,55 @@ config.window_decorations = "RESIZE"
 
 local act = wezterm.action
 
+-- 周期境界条件付きペイン移動
+local function wrap_navigate(direction)
+	return wezterm.action_callback(function(window, pane)
+		local tab = window:mux_window():active_tab()
+		local panes = tab:panes_with_info()
+		local current_id = pane:pane_id()
+
+		local current_info
+		for _, p in ipairs(panes) do
+			if p.pane:pane_id() == current_id then
+				current_info = p
+				break
+			end
+		end
+		if not current_info then return end
+
+		-- 移動方向に候補ペインがあるか確認
+		local has_candidate = false
+		for _, p in ipairs(panes) do
+			if p.pane:pane_id() ~= current_id then
+				if direction == "Left"  and p.left < current_info.left then has_candidate = true end
+				if direction == "Right" and p.left > current_info.left then has_candidate = true end
+				if direction == "Up"    and p.top  < current_info.top  then has_candidate = true end
+				if direction == "Down"  and p.top  > current_info.top  then has_candidate = true end
+			end
+		end
+
+		if has_candidate then
+			window:perform_action(act.ActivatePaneDirection(direction), pane)
+		else
+			-- 端 → 反対側の極値ペインにラップ
+			local target
+			for _, p in ipairs(panes) do
+				if p.pane:pane_id() ~= current_id then
+					if not target then
+						target = p
+					else
+						if direction == "Left"  and p.left > target.left then target = p end
+						if direction == "Right" and p.left < target.left then target = p end
+						if direction == "Up"    and p.top  > target.top  then target = p end
+						if direction == "Down"  and p.top  < target.top  then target = p end
+					end
+				end
+			end
+			if target then target.pane:activate() end
+		end
+	end)
+end
+
 config.keys = {
 	{ key = "t", mods = "CTRL", action = act.ShowLauncherArgs({ flags = "LAUNCH_MENU_ITEMS|TABS" }) },
 	{ key = "d", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
@@ -76,11 +125,11 @@ config.keys = {
 		action = act.ActivateKeyTable({ name = "claude_chord", one_shot = true, timeout_milliseconds = 1000 }),
 	},
 	{ key = "Copy", mods = "NONE", action = act.CopyTo("Clipboard") },
-	-- ペイン移動 (vim風)
-	{ key = "h", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
-	{ key = "j", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
-	{ key = "l", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
+	-- ペイン移動 (vim風・周期境界)
+	{ key = "h", mods = "CTRL|SHIFT", action = wrap_navigate("Left") },
+	{ key = "j", mods = "CTRL|SHIFT", action = wrap_navigate("Down") },
+	{ key = "k", mods = "CTRL|SHIFT", action = wrap_navigate("Up") },
+	{ key = "l", mods = "CTRL|SHIFT", action = wrap_navigate("Right") },
 	-- ペインリサイズ (Ctrl+矢印)
 	{ key = "LeftArrow",  mods = "CTRL", action = act.AdjustPaneSize({ "Left",  1 }) },
 	{ key = "RightArrow", mods = "CTRL", action = act.AdjustPaneSize({ "Right", 1 }) },
