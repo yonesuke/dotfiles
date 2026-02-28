@@ -8,5 +8,16 @@ return {
         inline = true,
       },
     },
+    picker = {
+      sources = {
+        explorer = {
+          layout = {
+            layout = {
+              position = "right",
+            },
+          },
+        },
+      },
+    },
   },
 }

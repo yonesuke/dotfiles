@@ -18,3 +18,9 @@ vim.opt.autowriteall = true
 
 -- システムクリップボードとの連携
 vim.opt.clipboard = "unnamedplus"
+
+-- python lsp server
+-- vim.g.lazyvim_python = "pyright"
+vim.g.lazyvim_python = "pyrefly"
+-- python ruff
+vim.g.lazyvim_python_ruff = "ruff"
