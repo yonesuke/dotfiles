@@ -22,4 +22,17 @@ return {
   {
     "HiPhish/rainbow-delimiters.nvim",
   },
+  -- auto docstring
+  {
+    "danymat/neogen",
+    opts = {
+      languages = {
+        python = {
+          template = {
+            annotation_convention = "google_docstrings",
+          },
+        },
+      },
+    },
+  },
 }
